@@ -3,6 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --pink: #FFC6C6;
+  --main: #4801FF;
+}
+
+*{
+  border: 1px solid red;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @theme inline {
@@ -14,13 +23,197 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+
+
+@font-face {
+  font-family: 'DrukWideLCGHeavy';
+  src: url('/fonts/DrukWideLCGHeavy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DrukWideLCGSuper';
+  src: url('/fonts/DrukWideLCGSuper.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DrukWideLCGBold';
+  src: url('/fonts/DrukWideLCGBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DrukWideLCGMedium';
+  src: url('/fonts/DrukWideLCGMedium.ttf') format('truetype');
+}
+
+
+.druk-bold {
+  font-family: 'DrukWideLCGBold', sans-serif;
+}
+.druk-medium {
+  font-family: 'DrukWideLCGMedium', sans-serif;
+transform: scaleX(1.1);
+
+}
+.druk{
+  font-family: 'DrukWideLCGHeavy', sans-serif;
+}
+.druk-super{
+  font-family: 'DrukWideLCGSuper', sans-serif;
+}
+
+.perspective-hover {
+  transform: rotateY(-45deg) translateZ(0) scale(1);
+  transform-origin: right center;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* .perspective-hover:hover {
+  transform: perspective(700000px) rotateY(0deg) skewY(0deg) skewX(0deg); */
+/* } */
+
+.container { perspective: 800px; } 
+.angled-text {
+  transform: perspective(800px) 
+             rotateY(-10deg) 
+             skewX(-5deg);
+  transform-style: preserve-3d;
+}
+
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Direct utility class for bg-main */
+.bg-main {
+  background-color: #4801FF !important;
+}
+
+.text-blue {
+  color: #4801FF !important;
+}
+
+/* Hide scrollbars for all elements but maintain scroll functionality */
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+  overflow-y: auto; /* Ensure scrolling still works */
+}
+
+/* Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.lenis {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Remove the overflow hidden which breaks scrolling */
+.lenis.lenis-stopped {
+  overflow: auto;
+}
+
+/* New scrollbar hide utility that preserves scrolling */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: auto !important;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* my styles from Van Holtz */
+
+.home-page .stagePerspective {
+  position: relative;
+  width: 100%;
+  perspective: 100vw;
+  perspective-origin: 50% 65%;
+}
+
+.parallaxPerspective {
+  perspective-origin: 50% var(--perspective-origin-y, 50%);
+  will-change: perspective-origin;
+}
+
+.home-page .stageContainer {
+  position: relative;
+  width: 100%;
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+}
+
+.home-page .stage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 5vw 5vw calc(7.5vw + 67px) 0;
+  transform-style: preserve-3d;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.home-page .projects {
+  position: relative;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  text-align: right;
+  width: 95%;
+  transform-style: preserve-3d;
+}
+
+.home-page .projectsLi {
+  cursor: pointer;
+  transform-style: preserve-3d !important;
+  perspective: inherit !important;
+}
+
+.home-page .projectContainer {
+  transform: rotateY(-45deg) translateZ(0) scale(1) !important;
+  transform-origin: right center !important;
+  transform-style: preserve-3d !important;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.home-page .projectContainer:hover {
+  transform: rotateY(-35deg) translateZ(5px) !important;
+  transition: transform 0.3s ease-in;
 }
