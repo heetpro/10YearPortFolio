@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@barba/core": "^2.10.3",
+    "@gsap/react": "^2.1.2",
     "@studio-freight/react-lenis": "^0.0.47",
     "framer-motion": "^12.7.4",
-    "gsap": "^3.12.7",
+    "gsap": "^3.13.0",
     "next": "15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

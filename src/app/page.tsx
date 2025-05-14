@@ -8,40 +8,6 @@ import Experiment from "@/components/Experiment";
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
-  useEffect(() => {
-    // Make sure scrolling is enabled
-    document.body.style.overflow = 'auto';
-    document.documentElement.style.overflow = 'auto';
-    
-    // Create a small delay to ensure the page is fully loaded
-    setTimeout(() => {
-      // Scroll to bottom
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: 'smooth'
-      });
-      
-      // Alternative approach using Lenis directly
-      const lenis = new Lenis();
-      lenis.scrollTo('bottom', { immediate: false, duration: 2 });
-    }, 100);
-
-    // Add mouse move effect for dynamic 3D perspective
-    const handleMouseMove = (e: MouseEvent) => {
-      // Calculate mouse position as percentage of window size
-      const x = (e.clientX / window.innerWidth) - 0.5; // -0.5 to 0.5
-      const y = (e.clientY / window.innerHeight) - 0.5; // -0.5 to 0.5
-      
-      setMousePosition({ x, y });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
   // Dynamic 3D effect based on mouse position
   const rotateY = -25 + (mousePosition.x * 5); // -27.5 to -22.5
   const rotateX = -10 + (mousePosition.y * 5); // -12.5 to -7.5

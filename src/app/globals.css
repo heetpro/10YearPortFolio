@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --pink: #FFC6C6;
-  --main: #4801FF;
+  --main: #000000;
+  --blue: #4801FF;
+  --red: #F93535;
+  --black: #000000;
 }
 
 *{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -48,13 +49,27 @@
   src: url('/fonts/DrukWideLCGMedium.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Berthold-akzidenz-grotesk-be-medium';
+  src: url('/fonts/Berthold-akzidenz-grotesk-be-medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Berthold-akzidenz-grotesk-be-regular';
+  src: url('/fonts/Berthold-akzidenz-grotesk-be-regular.ttf') format('truetype');
+}
+.normal-font{
+  font-family: 'Berthold-akzidenz-grotesk-be-regular', sans-serif;
+}
+.medium-font{
+  font-family: 'Berthold-akzidenz-grotesk-be-medium', sans-serif;
+}
 
 .druk-bold {
   font-family: 'DrukWideLCGBold', sans-serif;
 }
 .druk-medium {
   font-family: 'DrukWideLCGMedium', sans-serif;
-transform: scaleX(1.1);
+transform: scaleY(1.1);
 
 }
 .druk{
@@ -157,7 +172,7 @@ html, body {
   position: relative;
   width: 100%;
   perspective: 100vw;
-  perspective-origin: 50% 65%;
+  perspective-origin: 50% 33%;
 }
 
 .parallaxPerspective {
@@ -173,7 +188,7 @@ html, body {
 }
 
 .home-page .stage {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   display: -ms-flexbox;
@@ -195,11 +210,12 @@ html, body {
   padding-left: 0;
   list-style: none;
   text-align: right;
-  width: 95%;
+  width: 100%;
   transform-style: preserve-3d;
 }
 
 .home-page .projectsLi {
+  width: 100%;
   cursor: pointer;
   transform-style: preserve-3d !important;
   perspective: inherit !important;
@@ -210,10 +226,22 @@ html, body {
   transform-origin: right center !important;
   transform-style: preserve-3d !important;
   will-change: transform;
+  color : black !important;
   backface-visibility: hidden;
 }
 
 .home-page .projectContainer:hover {
-  transform: rotateY(-35deg) translateZ(5px) !important;
+  transform: rotateY(-40deg) translateZ(5px) !important;
   transition: transform 0.3s ease-in;
+  color : #fff !important;
+}
+
+/* Add hover shrink text effect */
+.shrink-text {
+  transition: font-size 0.3s ease, color 0.3s ease;
+  will-change: font-size, color;
+}
+
+.shrink-text:hover {
+  font-size: 80% !important; /* Reduces font size to 80% of original on hover */
 }

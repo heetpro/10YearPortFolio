@@ -1,39 +1,127 @@
 import React from 'react'
+import Copy from './Copy'
 
 const Bar = () => {
   return (
-    <div className=' z-[999] fixed w-fit text-white transition-all duration-300 cursor-pointer hover:text-[#4801FF] bg-main h-fit'
-    style={{
-      bottom: 'clamp(0.5rem, 7vw, 100rem)',
-      left: 'clamp(1rem, 4vw, 100rem)',
-      fontSize: 'clamp(1rem, 2.1vw, 100rem)',
-    }}
-    
-    >
-      <div className='druk-medium scale-y-110  leading-[0.95]' style={{  
-        WebkitTextStroke: 'clamp(0.005rem, 0.05vw, 1rem) #ffffff',
-        // transform: 'scaleX(1.1)'
-      }}>
-    VIRTUAL
-
-
-      </div>
-      <div className='druk-medium scale-y-110 leading-[0.95]' style={{ 
-        WebkitTextStroke: 'clamp(0.005rem, 0.05vw, 1rem) #ffffff',
-        // transform: 'scaleX(1.1)'
-       }}>  
-    HEET
-
-      </div>
-      <div className='druk-medium scale-y-110   leading-[0.95]' style={{  
-        WebkitTextStroke: 'clamp(0.005rem, 0.05vw, 1rem) #ffffff',
-        // transform: 'scaleX(1.1)'
-       }}
-
+    <>
+      <div className='z-[999] fixed w-fit text-black  transition-all duration-300 cursor-pointer leading-[0.95] druk-medium hover:text-[#fff] h-fit'
+        style={{
+          top: 'clamp(0.5rem, 7.5vw, 100rem)',
+          left: 'clamp(0.5rem, 2.75vw, 100rem)',
+          fontSize: 'clamp(1rem, 2.1vw, 100rem)',
+        }}
       >
-        CO{"."}
+        <Copy delay={2.1}>
+          <div className=' leading-[1]' style={{
+            WebkitTextStroke: 'clamp(0.005rem, 0.05vw, 1rem) #000000',
+          }}>
+            {/* VIRTUAL */}
+          </div>
+        </Copy>
+        <Copy delay={2.2}>
+          <div className=' leading-[1]' style={{
+            WebkitTextStroke: 'clamp(0.005rem, 0.05vw, 1rem) #000000',
+          }}>
+            HEET
+          </div>
+        </Copy>
+        <Copy delay={2.3}>
+          <div className=' leading-[1]' style={{
+            WebkitTextStroke: 'clamp(0.005rem, 0.05vw, 1rem) #000000',
+          }}>
+            PRO{"."}
+          </div>
+        </Copy>
       </div>
-    </div>
+
+      <div className='fixed z-[999] top-0 left-0 right-0 w-full text-black transition-all duration-300 cursor-pointer'
+        style={{
+          padding: ' clamp(0.5rem, 3.25vw, 100rem) clamp(0.5rem, 2.75vw, 100rem)',
+        }}
+      >
+        <div className="flex w-[100%] justify-start items-start">
+          <div className='flex w-[30%]'
+            style={{
+              fontSize: 'clamp(0.5rem, 0.75vw, 100rem)',
+              gap: 'clamp(0.5rem, 0.5vw, 100rem)',
+            }}
+          >
+            <div className="flex flex-col w-full"
+              style={{
+                gap: 'clamp(0.5rem, 0.5vw, 100rem)',
+              }}
+            >
+              <div className="normal-font leading-[0.95] transition-all duration-300">Heet Vavadiya</div>
+              <div className="normal-font leading-[0.95] transition-all duration-300">Web Developer</div>
+            </div>
+
+            <div className="flex flex-col w-full"
+              style={{
+                gap: 'clamp(0.5rem, 0.5vw, 100rem)',
+              }}
+            >
+              <div className="normal-font leading-[0.95] transition-all duration-300">github</div>
+              <div className="medium-font leading-[0.95] w-full transition-all duration-300 shrink-text">virtualheet{"@"}gmail{"."}com</div>
+            </div>
+
+            <div className="flex flex-col w-full"
+              style={{
+                gap: 'clamp(0.5rem, 0.5vw, 100rem)',
+              }}
+            >
+              <div className="flex gap-5 medium-font leading-[0.95] transition-all duration-300">
+                <span className='scale-75 normal-font transition-all duration-300'>01</span> 
+                <span className='shrink-text flex flex-col justify-end w-full'>about</span>
+              </div>
+              <div className="medium-font gap-5 flex leading-[0.95] transition-all duration-300">
+                <span className='scale-75 normal-font transition-all duration-300'>02</span> 
+                <span className='shrink-text flex flex-col justify-end w-full'>journal</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-between w-[15%]"
+            style={{
+              fontSize: 'clamp(0.5rem, 0.75vw, 100rem)',
+              gap: 'clamp(0.5rem, 0.5vw, 100rem)',
+            }}
+          >
+            <div className="flex-col flex"
+              style={{
+                gap: 'clamp(0.5rem, 0.5vw, 100rem)',
+              }}
+            >
+              <div className="flex gap-5 medium-font transition-all duration-300 leading-[0.95]" 
+                  style={{ fontSize: 'clamp(0.5rem, 0.75vw, 100rem)' }}>
+                <span className='scale-75 normal-font transition-all duration-300'>03</span>  
+                <span className='shrink-text flex flex-col justify-end w-full'>twitter</span>
+              </div>
+              <div className="flex gap-5 medium-font transition-all duration-300 leading-[0.95]" 
+                  style={{ fontSize: 'clamp(0.5rem, 0.75vw, 100rem)' }}>
+                <span className='scale-75 normal-font transition-all duration-300'>04</span> 
+                <span className='shrink-text flex flex-col justify-end w-full'>instagram</span>
+              </div>
+              <div className="flex gap-5 medium-font transition-all duration-300 leading-[0.95]" 
+                  style={{ fontSize: 'clamp(0.5rem, 0.75vw, 100rem)' }}>
+                <span className='scale-75 normal-font transition-all duration-300'>05</span> 
+                <span className='shrink-text flex flex-col justify-end w-full'>linkedin</span>
+              </div>
+            </div>
+
+            <div className="flex-col flex justify-end items-end"
+              style={{
+                gap: 'clamp(0.5rem, 0.5vw, 100rem)',
+              }}
+            > 
+              <div className="flex gap-5 normal-font transition-all duration-300 leading-[0.95] shrink-text w-full" 
+                  style={{ fontSize: 'clamp(0.5rem, 0.75vw, 100rem)' }}>design</div>
+              <div className="flex gap-5 medium-font transition-all duration-300 leading-[0.95] shrink-text w-full" 
+                  style={{ fontSize: 'clamp(0.5rem, 0.75vw, 100rem)' }}>feint</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 

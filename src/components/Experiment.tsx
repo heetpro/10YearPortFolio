@@ -1,32 +1,30 @@
 import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
+import Copy from './Copy';
 
-const data =[
+const data = [
     {
-        time1: "2024",
-        time2: "2025",
-        name: "RepiexlX",
-        name2: "Studio",
+        time1: "2025",
+        name: "AMOURIS",
+        name2: "CO.",
     },
     {
-        time1: "2024",
-        time2: "2025",
-        name: "THE",
-        name2: "BRIGADE",
+        time1: "2025",
+        name: "REPIXELX",
+        name2: "STUDIO",
     },
-        {
-            time1: "2024",
-            time2: "2025",
-            name: "PUSH",
-            name2: "",
-        },
-        {
-            time1: "2024",
-            time2: "2025",
-            name: "ONX MAPS",
-            name2: "Studio",
-        },
-    
+    {
+        time1: "2025",
+        name: "THE SECRET",
+        name2: "COMAPNY",
+    },
+    {
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+    },
+
+
 ]
 
 const Experiment = () => {
@@ -43,9 +41,9 @@ const Experiment = () => {
 
 
     return (
-        <div className="home-page">
-            <div className='h-[100vh] overflow-x-hidden text-black parallaxPerspective overflow-y-auto perspective-origin-tt-bb stagePerspective'>
-                <div className="stageContainer h-[100vh]">
+        <div className="home-page bg-[#FFF]">
+            <div className='min-h-screen h-full overflow-x-hidden text-black parallaxPerspective overflow-y-auto perspective-origin-tt-bb stagePerspective'>
+                <div className="stageContainer w-full h-full" style={{ minHeight: '150vh' }}>
                     <main className="stage"
                         style={{
                             transform: 'translate3d(0, 0, 0)',
@@ -53,62 +51,67 @@ const Experiment = () => {
                     >
                         <ul className='projects'>
                             {data.map((item, index) => (
-                            <li className="projectsLi" key={index}>
-                                <div 
-                                    ref={containerRef}
-                                    className="projectContainer"
-                                    style={{
-                                        transform: 'rotateY(-45deg) translateZ(0) scale(1)',
-                                        transformOrigin: 'right center',
-                                        transformStyle: 'preserve-3d',
-                                        willChange: 'transform',
-                                    }}
-                                >
-                                    <Link href="/" className='flex druk-super w-full justify-end'>
-                                        <div className='flex text-black'
-                                            style={{
-                                                fontSize: 'clamp(0.5rem, 0.75vw, 100rem)',
-                                                marginTop: 'clamp(0.05rem, 0.85vw, 100rem)',
-                                                
-                                            }}>
-                                            {item.time1} {"—"} {item.time2}
-                                        </div>
-                                        <div className="flex flex-col items-end hover:text-transparent"
-                                            style={{
-                                                fontSize: 'clamp(1rem, 10vw, 100rem)',
-                                                lineHeight: '0.85',
-                                                perspective: '500px',
-                                            }}>
-                                            <div className='druk-super tracking-wide uppercase transition-all duration-300'
+                                <li className="projectsLi " key={index}>
+                                    <div
+                                        ref={containerRef}
+                                        className=" w-full  projectContainer"
+                                        style={{
+                                            transformOrigin: 'right center',
+                                            transformStyle: 'preserve-3d',
+                                            willChange: 'transform',
+                                        }}
+                                    >
+                                        {/* <Copy delay={index + 0.1}> */}
+                                        <Link href="/" className='flex druk-super w-full justify-end'>
+
+                                            <div className="flex w-full flex-col items-end transition-all duration-300"
                                                 style={{
-                                                    WebkitTextStroke: 'clamp(0.005rem, 0.15vw, 1rem) #000000',
+                                                    fontSize: 'clamp(2rem, 10vw, 100rem)',
+                                                    lineHeight: '0.85',
                                                 }}>
-                                                <span className='text-blue'
+                                                <div className='druk-super  flex justify-between tracking-wide uppercase w-full transition-all duration-300 '
                                                     style={{
-                                                        WebkitTextStroke: '0px #000000',
-                                                        textShadow: '-2px 0px 0px #000000',
-                                                    }}
-                                                >
-                                                    {"/"}
+                                                        WebkitTextStroke: 'clamp(0.005rem, 0.15vw, 1rem) #000000',
+                                                    }}>
 
-                                                </span>
 
-                                                {item.name}</div>
-                                            <div className='druk-super tracking-wide uppercase transition-all duration-300'
-                                                style={{
-                                                    WebkitTextStroke: 'clamp(0.005rem, 0.15vw, 1rem) #000000',
-                                                }}>{item.name2}</div>
-                                        </div>
-                                    </Link>
-                                </div>
+                                                    <div className='flex medium-font text-black druk-medium font-light '
+                                                        style={{
+                                                            fontSize: 'clamp(0.5rem, 2vw, 100rem)',
 
-                            </li>
+                                                        }}>
+                                                        {item.time1}
+
+                                                        <span className='text-[#fff]'
+                                                            style={{
+                                                                fontSize: 'clamp(1rem, 10vw, 100rem)',
+                                                                lineHeight: '0.8',
+                                                                WebkitTextStroke: '0px #000000',
+                                                                textShadow: '-4px 0px 0px #000000',
+                                                            }}
+                                                        >
+                                                            {"/"}
+
+                                                        </span>
+                                                    </div>
+
+                                                    {item.name}</div>
+                                                <div className='druk-super tracking-wide uppercase transition-all duration-300 '
+                                                    style={{
+                                                        WebkitTextStroke: 'clamp(0.005rem, 0.15vw, 1rem) #000000',
+                                                    }}>{item.name2}</div>
+                                            </div>
+                                        </Link>
+                                        {/* </Copy> */}
+                                    </div>
+
+                                </li>
                             ))}
 
 
-                         
 
-                            
+
+
                         </ul>
 
 
