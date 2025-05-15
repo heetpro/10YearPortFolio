@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, ReactNode, RefObject, useEffect, useState } from "react";
+import React, { useRef, ReactNode, useEffect, useState } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

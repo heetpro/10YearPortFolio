@@ -1,9 +1,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import Bar from "@/components/Bar";
+import { ViewTransitions } from 'next-view-transitions';
 
 export const metadata: Metadata = {
-  title: 'Virtual Heet Co',
+  title: 'Heet Pro',
   description: 'Virtual Sheet Portfolio',
 };
 
@@ -13,11 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    <ViewTransitions>
     <html lang="en" className="scrollbar-none">
-      <body className="bg-main scrollbar-none " style={{ overflowY: 'auto' }}>
+      <body className="bg-white scrollbar-none " style={{ overflowY: 'auto' }}>
         <Bar />
         {children}
       </body>
     </html>
+    </ViewTransitions>
   );
 }

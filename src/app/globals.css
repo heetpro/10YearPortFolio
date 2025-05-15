@@ -72,6 +72,12 @@
 transform: scaleY(1.1);
 
 }
+
+.druk-so {
+  font-family: 'DrukWideLCGMedium', sans-serif;
+
+}
+
 .druk{
   font-family: 'DrukWideLCGHeavy', sans-serif;
 }
@@ -193,12 +199,13 @@ html, body {
   left: 0;
   display: -ms-flexbox;
   display: flex;
+  z-index: 100;
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: end;
   justify-content: flex-end;
   width: 100%;
-  padding: 5vw 5vw calc(7.5vw + 67px) 0;
+  padding: 7vw 5vw calc(7.5vw + 67px) 0;
   transform-style: preserve-3d;
   opacity: 1;
   transition: opacity 1s;
@@ -228,14 +235,16 @@ html, body {
   will-change: transform;
   color : black !important;
   backface-visibility: hidden;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .home-page .projectContainer:hover {
   transform: rotateY(-40deg) translateZ(5px) !important;
-  transition: transform 0.3s ease-in;
-  color : #fff !important;
 }
-
+.home-page .projectContainer:focus-within {
+  transform: rotateY(0deg) translateZ(0px) !important;
+  color: #fff !important;
+}
 /* Add hover shrink text effect */
 .shrink-text {
   transition: font-size 0.3s ease, color 0.3s ease;
@@ -245,3 +254,323 @@ html, body {
 .shrink-text:hover {
   font-size: 80% !important; /* Reduces font size to 80% of original on hover */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+h1 span {
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+
+a,
+p {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  padding: 1.25em 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  will-change: transform;
+}
+
+.nav > div {
+  flex: 1;
+}
+
+.logo a {
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5em;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  width: 60px;
+  height: 40px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 40px;
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  padding-top: 25svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.cta {
+  position: absolute;
+  left: 50%;
+  bottom: 3em;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 60px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fff;
+  border-radius: 4rem;
+  will-change: transform;
+}
+
+.cta-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cta-label p {
+  color: #000;
+}
+
+.cta-icon {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #303030;
+  border-radius: 60px;
+  will-change: transform;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+  background: #303030;
+}
+
+.intro-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 0.25rem;
+}
+
+#word-1 {
+  position: relative;
+  left: -0.5rem;
+  padding-right: 0.25rem;
+}
+
+.word h1 {
+  font-size: 2.5rem;
+}
+
+.divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center top;
+  width: 1px;
+  height: 100%;
+  background-color: #fff;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.counter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.count {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.digit {
+  flex: 1;
+}
+
+.count .digit h1 {
+  font-size: clamp(1rem, 3vw, 150rem);
+  font-weight: 400;
+}
+
+.nav {
+  transform: translateY(-120%);
+}
+
+.cta {
+  transform: translateX(-50%) scale(0);
+}
+
+.cta-icon {
+  transform: scale(0);
+}
+
+.line,
+.cta-label,
+.word,
+.count .digit {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.line h1,
+.line p,
+.cta-label p,
+.count .digit h1 {
+  position: relative;
+  transform: translateY(120%);
+  will-change: transform;
+}
+
+#word-1 h1 {
+  transform: translateY(-120%);
+}
+
+#word-2 h1 {
+  transform: translateY(120%);
+}
+
+.block {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.divider {
+  transform: scaleY(0%);
+  will-change: transform;
+}
+
+
+
+.revealer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  transform-origin: center top;
+  background-color: black;
+  pointer-events: none;
+  z-index: 2;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+}
+
+::view-transition-group(root) {
+  z-index: auto !important;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  will-change: clip-path;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 10000;
+  animation: none !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  animation: none !important;
+}
+
