@@ -1,141 +1,76 @@
 'use client'
 
 import { ReactLenis } from "@studio-freight/react-lenis";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Experiment from "@/components/Experiment";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
 import { UseRevealer } from "@/hooks/useRevealer";
+
+let isInitialLoad = true;
+
+
 export default function Home() {
   UseRevealer();
-  useEffect(() => {
+  
+
+  const containerRef = useRef(null);
+  const preloaderRef = useRef(null);
+  const progressBarRef = useRef(null);
+  const [showPreloader, setShowPreloader] = useState(isInitialLoad);
+
+  useLayoutEffect(() => {
     gsap.registerPlugin(CustomEase);
-    CustomEase.create("hop", "0.9, 0, 0.1, 1");
+    CustomEase.create(
+      "hop-main",
+      "M0,0 C0.354,0 0.464,0.133 0.498,0.502 0.532,0.872 0.651,1 1,1"
+    );
   }, []);
 
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      delay: 0.3,
-      defaults: {
-        ease: "hop",
-      },
-    });
+  useEffect(() => {
+    return () => {
+      isInitialLoad = false;
+    };
+  }, []);
 
-    const counts = document.querySelectorAll(".count");
+  useGSAP(
+    () => {
+      if (showPreloader) {
+        const tl = gsap.timeline({
+          onComplete: () => setShowPreloader(false),
+        });
 
-    counts.forEach((count, index) => {
-      const digits = count.querySelectorAll(".digit h1");
+        tl.to(progressBarRef.current, {
+          scaleX: 1,
+          duration: 4,
+          ease: "power1.inOut",
+        });
 
-      tl.to(
-        digits,
-        {
-          y: "0%",
-          duration: 1,
-          stagger: 0.075,
-        },
-        index * 1
-      );
-
-      if (index < counts.length) {
-        tl.to(
-          digits,
+        tl.set(progressBarRef.current, { transformOrigin: "right" }).to(
+          progressBarRef.current,
           {
-            y: "-100%",
+            scaleX: 0,
             duration: 1,
-            stagger: 0.075,
-          },
-          index * 1 + 1
+            ease: "power2.in",
+          }
         );
+
+        tl.to(preloaderRef.current, {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+          duration: 1.5,
+          ease: "hop-main",
+        });
       }
-    });
+    },
+    { scope: containerRef, dependencies: [showPreloader] }
+  );
 
-    tl.to(".spinner", {
-      opacity: 0,
-      duration: 0.3,
-    });
-
-    tl.to(
-      ".word h1",
-      {
-        y: "0%",
-        duration: 1,
-      },
-      "<"
-    );
-
-    tl.to(".divider", {
-      scaleY: "100%",
-      duration: 1,
-      onComplete: () => {
-        gsap.to(".divider", { opacity: 0, duration: 0.3, delay: 0.3 });
-      },
-    });
-
-    tl.to("#word-1 h1", {
-      y: "100%",
-      duration: 1,
-      delay: 0.3,
-    });
-
-    tl.to(
-      "#word-2 h1",
-      {
-        y: "-100%",
-        duration: 1,
-      },
-      "<"
-    );
-
-    tl.to(
-      ".block",
-      {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-        duration: 1,
-        stagger: 0.1,
-        delay: 0.75,
-        onStart: () => {
-          gsap.to(".hero-img", { scale: 1, duration: 2, ease: "hop" });
-        },
-      },
-      "<"
-    );
-
-    tl.to(
-      [".nav", ".line h1", ".line p"],
-      {
-        y: "0%",
-        duration: 1.5,
-        stagger: 0.2,
-      },
-      "<"
-    );
-
-    tl.to(
-      [".cta", ".cta-icon"],
-      {
-        scale: 1,
-        duration: 1.5,
-        stagger: 0.75,
-        delay: 0.75,
-      },
-      "<"
-    );
-
-    tl.to(
-      ".cta-label p",
-      {
-        y: "0%",
-        duration: 1.5,
-        delay: 0.5,
-      },
-      "<"
-    );
-  });
   
 
   return (
     <>
+    
     <div className="revealer"></div>
     <ReactLenis 
       root 
@@ -152,39 +87,11 @@ export default function Home() {
       className="scrollbar-none"
     >
 
-
-<div className="loader">
-        <div className="overlay">
-          <div className="block"></div>
-          <div className="block"></div>
+{showPreloader && (
+        <div className="pre-loader" ref={preloaderRef}>
+          <div className="progress-bar" ref={progressBarRef}></div>
         </div>
-
-        <div className="intro-logo">
-          <div className="word " id="word-1">
-            <h1>
-              <span className="druk-medium">HEET</span>
-            </h1>
-          </div>
-          <div className="word druk-medium" id="word-2">
-            <h1>PRO{"."}</h1>
-          </div>
-        </div>
-
-
-
-        <div className="counter druk-medium">
-          
-          
-          {/* <div className="count">
-            <div className="digit">
-              <h1>9</h1>
-            </div>
-            <div className="digit">
-              <h1>9</h1>
-            </div>
-          </div> */}
-        </div>
-      </div>
+      )}
              <div className="relative z-10">
          <Experiment />
        </div>

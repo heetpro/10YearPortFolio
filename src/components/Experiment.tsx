@@ -25,6 +25,76 @@ const data = [
         name: "AGROFIX",
         name2: "",
         link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
+    },{
+        time1: "2025",
+        name: "AGROFIX",
+        name2: "",
+        link: "/work/agrofix",
     },
 
 
@@ -93,13 +163,13 @@ const Experiment = () => {
     return (
         <div className="home-page  bg-[#FFF]">
             <div className={`min-h-screen h-full overflow-x-hidden text-black parallaxPerspective transition-all duration-300 overflow-y-auto perspective-origin-tt-bb stagePerspective `}>
-                <div className="stageContainer w-full h-full" style={{ minHeight: '150vh' }}>
-                    <main className="stage"
+                <div className="stageContainer w-full h-full" style={{ minHeight: '250vh' }}>
+                    <main className="stage h-full"
                         style={{
                             transform: 'translate3d(0, 0, 0)',
                         }}
                     >
-                        <ul className='projects'>
+                        <ul className='projects h-full'>
                             {data.map((item, index) => (
                                 <li className="projectsLi " key={index}>
                                     <div
@@ -122,7 +192,7 @@ const Experiment = () => {
 
                                             <div className="flex w-full flex-col  hover:text-white has-focus-within:text-white focus-within:text-white items-end hovd transition-all duration-300"
                                                 style={{
-                                                    fontSize: 'clamp(2rem, 10vw, 100rem)',
+                                                    fontSize: 'clamp(3rem, 10vw, 100rem)',
                                                     lineHeight: '0.85',
                                                 }}>
                                                 <div className='druk-super  flex justify-between tracking-wide uppercase w-full transition-all duration-300 '

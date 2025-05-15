@@ -32,10 +32,13 @@ const Bar = () => {
       e.preventDefault();
       return;
     }
+    e.preventDefault();
 
-    router.push(path, {
-      onTransitionReady: triggerPageTransition,
-    });
+    setTimeout(() => {
+        router.push(path, {
+          onTransitionReady: triggerPageTransition,
+        });
+      }, 500);
   };
 
   return (
