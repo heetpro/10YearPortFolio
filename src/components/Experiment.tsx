@@ -25,79 +25,7 @@ const data = [
         name: "AGROFIX",
         name2: "",
         link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
-    },{
-        time1: "2025",
-        name: "AGROFIX",
-        name2: "",
-        link: "/work/agrofix",
     },
-
-
 ]
 
 const Experiment = () => {
@@ -162,19 +90,24 @@ const Experiment = () => {
 
     return (
         <div className="home-page  bg-[#FFF]">
-            <div className={`min-h-screen h-full overflow-x-hidden text-black parallaxPerspective transition-all duration-300 overflow-y-auto perspective-origin-tt-bb stagePerspective `}>
-                <div className="stageContainer w-full h-full" style={{ minHeight: '250vh' }}>
-                    <main className="stage h-full"
+            <div className={` h-full overflow-x-hidden text-black parallaxPerspective transition-all select-none duration-300 overflow-y-auto  stagePerspective fixed-perspective-origin`}>
+                <div className="stageContainer w-full h-full" 
+                    style={{ 
+                        height: 'auto', 
+                        position: 'relative',
+                        paddingBottom: '50px' // Add some padding at the bottom
+                    }}>
+                    <main className="stage h-full w-full"
                         style={{
                             transform: 'translate3d(0, 0, 0)',
                         }}
                     >
-                        <ul className='projects h-full'>
+                        <ul className='projects h-full w-full'>
                             {data.map((item, index) => (
-                                <li className="projectsLi " key={index}>
+                                <li className="projectsLi w-full h-fit " key={index}>
                                     <div
                                         ref={(el) => { containerRefs.current[index] = el; }}
-                                        className=" w-full  projectContainer"
+                                        className=" w-full  h-full projectContainer"
                                         style={{
                                             transformOrigin: 'right center',
                                             transformStyle: 'preserve-3d',
@@ -190,23 +123,23 @@ const Experiment = () => {
                                             ref={(el) => { linkRefs.current[index] = el; }}
                                         >
 
-                                            <div className="flex w-full flex-col  hover:text-white has-focus-within:text-white focus-within:text-white items-end hovd transition-all duration-300"
+                                            <div className="flex w-full flex-col  hover:text-white has-focus-within:text-white focus-within:text-white items-end text-black transition-all duration-300"
                                                 style={{
-                                                    fontSize: 'clamp(3rem, 10vw, 100rem)',
+                                                    fontSize: 'clamp(3.4rem, 10vw, 100rem)',
                                                     lineHeight: '0.85',
                                                 }}>
-                                                <div className='druk-super  flex justify-between tracking-wide uppercase w-full transition-all duration-300 '
+                                                <div className='druk-super text-right  tracking-wide uppercase w-[130%] transition-all duration-300 '
                                                     style={{
                                                         WebkitTextStroke: 'clamp(0.005rem, 0.15vw, 1rem) #000000',
                                                     }}>
 
 
-                                                    <div className='flex druk-so  text-black  font-light '
+                                                    {/* <div className='flex druk-so  text-black  font-light '
                                                         style={{
                                                             fontSize: 'clamp(0.5rem, 1vw, 100rem)',
 
                                                         }}>
-                                                        {/* {item.time1} */}
+                                                        {item.time1}
 
                                                         <span className='text-[#fff]'
                                                             style={{
@@ -216,10 +149,10 @@ const Experiment = () => {
                                                                 textShadow: '-4px 0px 0px #000000',
                                                             }}
                                                         >
-                                                            {/* {"/"} */}
+                                                            {"/"}
 
                                                         </span>
-                                                    </div>
+                                                    </div> */}
 
                                                     {item.name}</div>
                                                 <div className='druk-super tracking-wide uppercase transition-all duration-300 '
@@ -246,7 +179,9 @@ const Experiment = () => {
 
                 </div>
             </div>
+        
         </div>
+
     )
 }
 

@@ -87,12 +87,12 @@ export default function Home() {
       className="scrollbar-none"
     >
 
-{showPreloader && (
+    {showPreloader && (
         <div className="pre-loader" ref={preloaderRef}>
           <div className="progress-bar" ref={progressBarRef}></div>
         </div>
       )}
-             <div className="relative z-10">
+             <div className="relative h-full z-10">
          <Experiment />
        </div>
     </ReactLenis>

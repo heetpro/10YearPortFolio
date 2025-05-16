@@ -9,7 +9,7 @@
 }
 
 *{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -85,30 +85,9 @@ transform: scaleY(1.1);
   font-family: 'DrukWideLCGSuper', sans-serif;
 }
 
-.perspective-hover {
-  transform: rotateY(-45deg) translateZ(0) scale(1);
-  transform-origin: right center;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-
-/* .perspective-hover:hover {
-  transform: perspective(700000px) rotateY(0deg) skewY(0deg) skewX(0deg); */
-/* } */
-
-.container { perspective: 800px; } 
-.angled-text {
-  transform: perspective(800px) 
-             rotateY(-10deg) 
-             skewX(-5deg);
-  transform-style: preserve-3d;
-}
 
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Direct utility class for bg-main */
@@ -130,6 +109,12 @@ html, body {
 /* Chrome, Safari and Opera */
 ::-webkit-scrollbar {
   display: none;
+}
+
+.navbar{
+    top: clamp(0.5rem, 7.5vw, 100rem);
+    left: clamp(0.5rem, 2.75vw, 100rem);
+    font-size: clamp(1.5rem, 2.1vw, 100rem);
 }
 
 .lenis {
@@ -172,24 +157,38 @@ html, body {
 
 
 
-/* my styles from Van Holtz */
 
 .home-page .stagePerspective {
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  height: fit-content !important;
+  overflow-y: scroll !important;
   perspective: 100vw;
-  perspective-origin: 50% 50%;
+  perspective-origin: 50vw 50vh;
+  transform-style: preserve-3d;
+}
+
+/* Fixed perspective independent of content height */
+.fixed-perspective-origin {
+  transform-style: preserve-3d;
+}
+
+
+
+.perspective-wrapper > * {
+  pointer-events: auto;
 }
 
 .parallaxPerspective {
-  perspective-origin: 50% var(--perspective-origin-y, 50%);
+  perspective-origin: 50vw var(--perspective-origin-y, 50vh);
   will-change: perspective-origin;
 }
 
 .home-page .stageContainer {
   position: relative;
   width: 100%;
+  height: 100%;
   transform: translateZ(0);
   transform-style: preserve-3d;
 }
@@ -219,11 +218,14 @@ html, body {
   list-style: none;
   text-align: right;
   width: 100%;
+  z-index: 999;
   transform-style: preserve-3d;
 }
 
 .home-page .projectsLi {
   width: 100%;
+  height: fit-content;
+  padding-bottom: clamp(0.05rem,0.5vw,200rem);
   cursor: pointer;
   transform-style: preserve-3d !important;
   perspective: inherit !important;
@@ -235,6 +237,7 @@ html, body {
   transform-style: preserve-3d !important;
   will-change: transform;
   color : black !important;
+  width: 100% !important;
   backface-visibility: hidden;
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -257,11 +260,17 @@ html, body {
 }
 @media (max-width: 768px) {
   .home-page .stagePerspective {
-    perspective-origin: 30% 13%;
+    perspective: 400vw;
+    perspective-origin: 50vw 50vh;
   }
 
   .home-page .stage {
     padding: 30vw 5vw calc(10.5vw + 67px) 0;
+  }
+
+  .navbar{
+    top: clamp(0.5rem, 3.5vw, 100rem);
+    left: clamp(0.5rem, 3.75vw, 100rem);
   }
 }
 
@@ -344,4 +353,3 @@ html, body {
   z-index: 1;
   animation: none !important;
 }
-

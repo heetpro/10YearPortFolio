@@ -43,12 +43,8 @@ const Bar = () => {
 
   return (
     <>
-      <Link href="/" onClick={handleNavigation('/')} className='z-[999] fixed w-fit text-black  transition-all duration-300 cursor-pointer leading-[0.95] druk-medium hover:text-[#fff] h-fit'
-        style={{
-          top: 'clamp(0.5rem, 7.5vw, 100rem)',
-          left: 'clamp(0.5rem, 2.75vw, 100rem)',
-          fontSize: 'clamp(1rem, 2.1vw, 100rem)',
-        }}
+      <Link href="/" onClick={handleNavigation('/')} className='z-[999] navbar fixed w-fit text-black  transition-all duration-300 cursor-pointer leading-[0.95] druk-medium hover:text-[#fff] h-fit'
+        
       >
      
         <Copy delay={4.2}>
@@ -67,7 +63,7 @@ const Bar = () => {
         </Copy>
       </Link>
 
-      <div className='fixed z-[999] top-0 left-0 right-0 w-full text-black transition-all duration-300 cursor-pointer'
+      <div className=' hidden md:block fixed z-[999] top-0 left-0 right-0 w-full text-black transition-all duration-300 cursor-pointer'
         style={{
           padding: ' clamp(0.5rem, 3.25vw, 100rem) clamp(0.5rem, 2.75vw, 100rem) 0',
         }}
