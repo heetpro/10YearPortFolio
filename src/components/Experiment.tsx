@@ -123,7 +123,7 @@ const Experiment = () => {
                                             ref={(el) => { linkRefs.current[index] = el; }}
                                         >
 
-                                            <div className="flex w-full flex-col  hover:text-white has-focus-within:text-white focus-within:text-white items-end text-black transition-all duration-300"
+                                            <div className="flex w-full flex-col  hover:text-white has-focus-within:text-white focus:text-white focus-within:text-white items-end text-black transition-all duration-300"
                                                 style={{
                                                     fontSize: 'clamp(3.4rem, 10vw, 100rem)',
                                                     lineHeight: '0.85',

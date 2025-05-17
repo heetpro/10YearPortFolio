@@ -68,7 +68,11 @@ const Bar = () => {
           padding: ' clamp(0.5rem, 3.25vw, 100rem) clamp(0.5rem, 2.75vw, 100rem) 0',
         }}
       >
-        <div className="flex w-[100%] justify-start items-start">
+        <div className="flex w-[100%] justify-start items-start "
+        style={{
+gap: 'clamp(0.5rem, 2vw, 100rem)',
+        }}
+        >
           <div className='flex w-[30%]'
             style={{
               fontSize: 'clamp(0.5rem, 0.75vw, 100rem)',
