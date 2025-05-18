@@ -5,7 +5,7 @@ import { ViewTransitions } from 'next-view-transitions';
 
 export const metadata: Metadata = {
   title: 'Heet Pro',
-  description: 'Virtual Sheet Portfolio',
+  description: "Heet Vavadiya A Full Stack Blockchain Developer.",
 };
 
 export default function RootLayout({

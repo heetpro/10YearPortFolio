@@ -88,14 +88,14 @@ gap: 'clamp(0.5rem, 2vw, 100rem)',
               <div className="normal-font leading-[0.95] transition-all duration-300">Web Developer</div>
             </div>
 
-            <div className="flex flex-col w-full"
+            <Link href="https://github.com/virtualheet" target='_blank' className="flex flex-col w-full"
               style={{
                 gap: 'clamp(0.5rem, 0.5vw, 100rem)',
               }}
             >
               <div className="normal-font leading-[0.95] transition-all duration-300">{"@"}github</div>
               <div className="medium-font leading-[0.95] w-full transition-all duration-300 shrink-text">virtualheet{"@"}gmail{"."}com</div>
-            </div>
+            </Link>
 
             <div className="flex flex-col w-full"
               style={{
@@ -110,10 +110,12 @@ gap: 'clamp(0.5rem, 2vw, 100rem)',
                 <span className='scale-75 normal-font transition-all duration-300'>02</span> 
                 <span className='shrink-text flex flex-col justify-end w-full'>journal</span>
               </div>
+              <Link href="/projects" onClick={handleNavigation('/projects')} >
               <div className="medium-font gap-5 flex leading-[0.95] transition-all duration-300">
                 <span className='scale-75 normal-font transition-all duration-300'>03</span> 
                 <span className='shrink-text flex flex-col justify-end w-full'>projects</span>
-              </div>
+                </div>
+              </Link>
             </div>
           </div>
 
@@ -128,21 +130,27 @@ gap: 'clamp(0.5rem, 2vw, 100rem)',
                 gap: 'clamp(0.5rem, 0.5vw, 100rem)',
               }}
             >
+              <Link href="https://x.com/xheetv" target='_blank'> 
               <div className="flex gap-5 medium-font transition-all duration-300 leading-[0.95]" 
                   style={{ fontSize: 'clamp(0.5rem, 0.75vw, 100rem)' }}>
                 <span className='scale-75 normal-font transition-all duration-300'>04</span>  
                 <span className='shrink-text flex flex-col justify-end w-full'>twitter</span>
               </div>
+              </Link>
+              <Link href="https://www.instagram.com/virtualheet" target='_blank'> 
               <div className="flex gap-5 medium-font transition-all duration-300 leading-[0.95]" 
                   style={{ fontSize: 'clamp(0.5rem, 0.75vw, 100rem)' }}>
                 <span className='scale-75 normal-font transition-all duration-300'>05</span> 
                 <span className='shrink-text flex flex-col justify-end w-full'>instagram</span>
               </div>
+              </Link>
+              <Link href="https://www.linkedin.com/in/heetvavadiya/" target='_blank'> 
               <div className="flex gap-5 medium-font transition-all duration-300 leading-[0.95]" 
                   style={{ fontSize: 'clamp(0.5rem, 0.75vw, 100rem)' }}>
                 <span className='scale-75 normal-font transition-all duration-300'>06</span> 
                 <span className='shrink-text flex flex-col justify-end w-full'>linkedin</span>
               </div>
+              </Link>
             </div>
 
             <div className="flex-col flex justify-end items-end"
