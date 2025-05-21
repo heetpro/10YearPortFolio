@@ -124,15 +124,6 @@ export default page
         image: "/projects/4.png"
       },
       {
-        id: 12,
-        title: "Amouris Studio",
-       
-        description: "Ongoing = International Designer Studio.",
-        tags: ["Next.js", "Typescript", "PostgreSQL", "Golang", "Redis", "Shadcn UI", "Magic UI", "SMTP"],
-        imageAlt: "Temp Mail Service Screenshot",
-        image: "/projects/12.png"
-      },
-      {
         id: 5,
         title: "Mera Halwai",
        
