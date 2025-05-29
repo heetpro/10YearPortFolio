@@ -38,7 +38,7 @@ const page = () => {
           }}
       >
         {projects.map((project) => (
-          <div key={project.id} className="rounded-xl h-fit overflow-hidden border-2 border-gray-200"
+          <div key={project.id} className="rounded-xl h-fit overflow-hidden "
           style={{
             margin: '0 0 2vw',
           }}
@@ -57,13 +57,14 @@ const page = () => {
             <div className="flex flex-col justify-between h-1/3"
             style={{
                 gap: 'clamp(0.5rem, 0.5vw, 200rem)',
-              padding: 'clamp(1rem, 0.75vw, 200rem)',
+              // padding: 'clamp(1rem, 0.75vw, 200rem)',
+            fontSize: 'clamp(1rem, 2vw, 200rem)',
             }}
             >
-              <h2 className="text-xl font-bold">{project.title}</h2>
-              <p className="mt-2 text-gray-700">
+              <h2 className=" druk-medium uppercase font-bold">{project.title}</h2>
+              {/* <p className="mt-2 text-gray-700">
                 {project.description}
-              </p>
+              </p> */}
               {/* <div className="flex flex-wrap gap-2 mt-4">
                 {project.tags.map((tag, index) => (
                   <span key={index}
@@ -88,9 +89,26 @@ const page = () => {
 export default page
 
     const projects = [
+      
+      {
+        id: 13,
+        title: "Deep Patel - Portfolio",
+        description: "A Portfolio Website for Deep Patel.",
+        tags: ["Next.js", "PostgreSQL", "Workers", "Redis", "Golang", "RabbitMQ", "Broker's API", "Web Scraping"],
+        imageAlt: "Trading Execution Engine Screenshot",
+        image: "/projects/13.png"
+      },
+      {
+        id: 14,
+        title: "Amouris Studio",
+        description: "A Design Studio Website.",
+        tags: ["Next.js", "PostgreSQL", "Workers", "Redis", "Golang", "RabbitMQ", "Broker's API", "Web Scraping"],
+        imageAlt: "Trading Execution Engine Screenshot",
+        image: "/projects/14.png"
+      },
       {
         id: 1,
-        title: "www.Kafinao.store",
+        title: "Kafinao store",
         description: "A Design Typography Website - inspiration from New York Times & Awwwrds Site.",
         tags: ["Next.js", "PostgreSQL", "Workers", "Redis", "Golang", "RabbitMQ", "Broker's API", "Web Scraping"],
         imageAlt: "Trading Execution Engine Screenshot",
@@ -98,7 +116,7 @@ export default page
       },
       {
         id: 2,
-        title: "PayZepp - Your Crypto Payment Gateway",
+        title: "PayZepp ",
      
         description: "Ongoing Project - A Crypto Payment Gateway for ETH, SOL, USDT, BTC",
         tags: ["Golang", "Cobra", "Next.js", "PostgreSQL", "Javascript", "Redis", "Golang", "RabbitMQ"],

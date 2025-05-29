@@ -85,7 +85,7 @@ gap: 'clamp(0.5rem, 2vw, 100rem)',
               }}
             >
               <div className="normal-font leading-[0.95] transition-all duration-300">Heet Vavadiya</div>
-              <div className="normal-font leading-[0.95] transition-all duration-300">Web Developer</div>
+              <div className="normal-font leading-[0.95] transition-all duration-300">Web3 Developer</div>
             </div>
 
             <Link href="https://github.com/virtualheet" target='_blank' className="flex flex-col w-full"
