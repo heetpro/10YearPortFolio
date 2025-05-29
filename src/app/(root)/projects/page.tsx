@@ -3,6 +3,7 @@
 import React from 'react'
 import { UseRevealer } from '@/hooks/useRevealer'
 import Image from 'next/image';
+import Link from 'next/link';
 const page = () => {
 
   UseRevealer();
@@ -61,7 +62,12 @@ const page = () => {
             fontSize: 'clamp(1rem, 2vw, 200rem)',
             }}
             >
-              <h2 className=" druk-medium uppercase font-bold">{project.title}</h2>
+              <Link href={project.link}
+              target='_blank'
+              style={{
+                WebkitTextStroke: 'clamp(0.005rem, 0.005vw, 1rem) #000000',
+              }}
+              className=" druk-medium hover:text-white transition-all duration-300  uppercase font-bold">{project.title}</Link>
               {/* <p className="mt-2 text-gray-700">
                 {project.description}
               </p> */}
@@ -96,7 +102,8 @@ export default page
         description: "A Portfolio Website for Deep Patel.",
         tags: ["Next.js", "PostgreSQL", "Workers", "Redis", "Golang", "RabbitMQ", "Broker's API", "Web Scraping"],
         imageAlt: "Trading Execution Engine Screenshot",
-        image: "/projects/13.png"
+        image: "/projects/13.png",
+        link: "https://me.typodeep.com"
       },
       {
         id: 14,
@@ -104,7 +111,8 @@ export default page
         description: "A Design Studio Website.",
         tags: ["Next.js", "PostgreSQL", "Workers", "Redis", "Golang", "RabbitMQ", "Broker's API", "Web Scraping"],
         imageAlt: "Trading Execution Engine Screenshot",
-        image: "/projects/14.png"
+        image: "/projects/14.png",
+        link: "https://amouris-ongoing.vercel.app/"
       },
       {
         id: 1,
@@ -112,7 +120,8 @@ export default page
         description: "A Design Typography Website - inspiration from New York Times & Awwwrds Site.",
         tags: ["Next.js", "PostgreSQL", "Workers", "Redis", "Golang", "RabbitMQ", "Broker's API", "Web Scraping"],
         imageAlt: "Trading Execution Engine Screenshot",
-        image: "/projects/1.png"
+        image: "/projects/1.png",
+        link: "https://www.kafinao.store"
       },
       {
         id: 2,
@@ -121,7 +130,8 @@ export default page
         description: "Ongoing Project - A Crypto Payment Gateway for ETH, SOL, USDT, BTC",
         tags: ["Golang", "Cobra", "Next.js", "PostgreSQL", "Javascript", "Redis", "Golang", "RabbitMQ"],
         imageAlt: "Open Source Package Manager Screenshot",
-        image: "/projects/2.png"
+        image: "/projects/2.png",
+        link: "https://youtu.be/giWN18pZcsU"
       },
       {
         id: 3,
@@ -130,7 +140,8 @@ export default page
         description: "A Jewelry selling Full-stack - Ecommerce Website",
         tags: ["Next.js", "Typescript", "PostgreSQL", "Golang", "Redis", "Shadcn UI", "Magic UI", "SMTP"],
         imageAlt: "Temp Mail Service Screenshot",
-        image: "/projects/3.png"
+        image: "/projects/3.png",
+        link: "https://vaayujewels.com/"
       },
       {
         id: 4,
@@ -139,7 +150,8 @@ export default page
         description: "Ongoing - A Designer and Developer Studio Main Site.",
         tags: ["Go", "Docker", "Kubernetes", "GitHub Actions", "Prometheus", "Grafana", "Helm", "PostgreSQL"],
         imageAlt: "Scalable Microservices Infrastructure Screenshot",
-        image: "/projects/4.png"
+        image: "/projects/4.png",
+        link: "https://repixelx.com/"
       },
       {
         id: 5,
@@ -148,7 +160,8 @@ export default page
         description: "Food Party Order Website.",
         tags: ["Next.js", "Typescript", "PostgreSQL", "Golang", "Redis", "Shadcn UI", "Magic UI", "SMTP"],
         imageAlt: "Temp Mail Service Screenshot",
-        image: "/projects/5.png"
+        image: "/projects/5.png",
+        link: "https://merahalwai.com/"
       },
       {
         id: 6,
@@ -157,7 +170,8 @@ export default page
         description: "A Uniswap Clone - maded with latest ethers v6 - A Decentralized Exchange (DEX) built on the Ethereum blockchain.",
         tags: ["Next.js", "Typescript", "PostgreSQL", "Golang", "Redis", "Shadcn UI", "Magic UI", "SMTP"],
         imageAlt: "Temp Mail Service Screenshot",
-        image: "/projects/6.png"
+        image: "/projects/6.png",
+        link: "https://www.linkedin.com/posts/heetvavadiya_web3-cryptocurrency-blockchain-activity-7309127922177531904-hvFg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFdy0_QBqlRKPmFywmzdezuN5N80Z78Tq_w"
       },
       {
         id: 7,
@@ -166,7 +180,8 @@ export default page
         description: "A Old Portfolio Website.",
         tags: ["Next.js", "Typescript", "PostgreSQL", "Golang", "Redis", "Shadcn UI", "Magic UI", "SMTP"],
         imageAlt: "Temp Mail Service Screenshot",
-        image: "/projects/7.png"
+        image: "/projects/7.png",
+        link: "https://heetvavadiya.vercel.app/"
       },
       {
         id: 8,
@@ -175,7 +190,8 @@ export default page
         description: "A Project Summary Generator using latest Gemini 2.5 - Get your project summary in seconds.",
         tags: ["Next.js", "Typescript", "PostgreSQL", "Golang", "Redis", "Shadcn UI", "Magic UI", "SMTP"],
         imageAlt: "Temp Mail Service Screenshot",
-        image: "/projects/8.png"
+        image: "/projects/8.png",
+        link: "https://www.linkedin.com/posts/heetvavadiya_typescript-nextjs-ai-activity-7304384564754366465-rOx2?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFdy0_QBqlRKPmFywmzdezuN5N80Z78Tq_w"
       }
       ,
       {
@@ -185,7 +201,8 @@ export default page
         description: "A Normal MERN stack Chat App.",
         tags: ["Next.js", "Typescript", "PostgreSQL", "Golang", "Redis", "Shadcn UI", "Magic UI", "SMTP"],
         imageAlt: "Temp Mail Service Screenshot",
-        image: "/projects/9.png"
+        image: "/projects/9.png",
+        link: "https://www.linkedin.com/posts/heetvavadiya_mernstack-mernstack-webdesign-activity-7185188278994669568-Q2eH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFdy0_QBqlRKPmFywmzdezuN5N80Z78Tq_w"
       }
       ,
       {
@@ -195,7 +212,8 @@ export default page
         description: "Friends Project - just maded UI",
         tags: ["Next.js", "Typescript", "PostgreSQL", "Golang", "Redis", "Shadcn UI", "Magic UI", "SMTP"],
         imageAlt: "Temp Mail Service Screenshot",
-        image: "/projects/10.png"
+        image: "/projects/10.png",
+        link: "/projects"
       }
       ,
       {
@@ -205,7 +223,8 @@ export default page
         description: "Friends Project - just maded UI",
         tags: ["Next.js", "Typescript", "PostgreSQL", "Golang", "Redis", "Shadcn UI", "Magic UI", "SMTP"],
         imageAlt: "Temp Mail Service Screenshot",
-        image: "/projects/11.png"
+        image: "/projects/11.png",
+        link: "/projects"
       }
       ,
     
