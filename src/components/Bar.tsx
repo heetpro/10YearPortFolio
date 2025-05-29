@@ -47,14 +47,14 @@ const Bar = () => {
         
       >
      
-        <Copy delay={4.2}>
+        <Copy delay={6.3}>
           <div className=' leading-[1]' style={{
             WebkitTextStroke: 'clamp(0.005rem, 0.05vw, 1rem) #000000',
           }}>
             HEET
           </div>
         </Copy>
-        <Copy delay={4.3}>
+        <Copy delay={6.4}>
           <div className=' leading-[1]' style={{
             WebkitTextStroke: 'clamp(0.005rem, 0.05vw, 1rem) #000000',
           }}>
