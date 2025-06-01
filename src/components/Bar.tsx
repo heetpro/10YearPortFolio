@@ -130,14 +130,14 @@ gap: 'clamp(0.5rem, 2vw, 100rem)',
                 gap: 'clamp(0.5rem, 0.5vw, 100rem)',
               }}
             >
-              <Link href="https://x.com/xheetv" target='_blank'> 
+              <Link href="https://x.com/heetprox" target='_blank'> 
               <div className="flex gap-5 medium-font transition-all duration-300 leading-[0.95]" 
                   style={{ fontSize: 'clamp(0.5rem, 0.75vw, 100rem)' }}>
                 <span className='scale-75 normal-font transition-all duration-300'>04</span>  
                 <span className='shrink-text flex flex-col justify-end w-full'>twitter</span>
               </div>
               </Link>
-              <Link href="https://www.instagram.com/virtualheet" target='_blank'> 
+              <Link href="https://www.instagram.com/heetprox" target='_blank'> 
               <div className="flex gap-5 medium-font transition-all duration-300 leading-[0.95]" 
                   style={{ fontSize: 'clamp(0.5rem, 0.75vw, 100rem)' }}>
                 <span className='scale-75 normal-font transition-all duration-300'>05</span> 
