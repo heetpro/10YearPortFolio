@@ -19,6 +19,7 @@
     "next-view-transitions": "^0.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "speedcast-api": "^1.0.0",
     "tailwind-scrollbar": "^4.0.2"
   },
   "devDependencies": {
