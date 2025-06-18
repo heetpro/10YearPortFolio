@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
     <html lang="en" className="scrollbar-none">
-      <body className="bg-white scrollbar-none " style={{ overflowY: 'auto' }}>
+      <body className="bg-white scrollbar-none overflow-y-auto ">
         <Bar />
         {children}
       </body>
